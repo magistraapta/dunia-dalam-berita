@@ -20,6 +20,10 @@ const news = [
         title: 'title here',
         desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat.'
     },
+    {
+        title: 'title here',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat.'
+    },
     
     
     
@@ -28,13 +32,14 @@ const news = [
 
 
 export default async function Content({category}) {
-    const data = await getData()
   return (
     <div className='flex justify-center my-4 '>
-        <div className='h-[400px] w-11/12   p-4 '>
+
+        <div className=' w-11/12 px-4   '>
+
             <h1 className=' font-bold text-2xl'>{category}</h1>
             
-            <div className='mt-2 flex w-full flex-row gap-4 justify-between overflow-x-scroll'>
+            <div className=' flex flex-row gap-2 overflow-x-scroll w-full no-scrollbar  justify-between'>
                 {
                     news.map((item, index) => (
                         <NewsCard key={index} title={item.title} desc={item.desc}/>
@@ -42,6 +47,7 @@ export default async function Content({category}) {
                 }
             </div>
         </div>
+
     </div>
   )
 }
