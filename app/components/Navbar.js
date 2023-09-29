@@ -3,10 +3,10 @@ import React from 'react'
 export default function Navbar() {
   return (
     
-    <div className='flex justify-center'>
-        <div className='flex justify-between  w-11/12 p-4 items-center'>
+    <div className='flex justify-center shadow-md sticky top-0 bg-white'>
+        <div className='flex justify-between  w-11/12 p-6 items-center'>
         <div className=''>
-            <h1 className=' font-bold text-xl'>Dunia Dalam Berita</h1>
+            <h1 className=' font-bold text-xl'><a href="/">Dunia Dalam Berita</a></h1>
         </div>
         <div className=' w-3/12'>
             <ul className=' flex justify-between  '>
