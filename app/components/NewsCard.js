@@ -4,7 +4,7 @@ import newsCover from './image-example.webp';
 
 export default function NewsCard({title, desc}) {
   return (
-    <div className=' border my-4 min-w-[400px] p-2 rounded-md '>
+    <div className=' my-4 min-w-[400px] p-2 rounded-md '>
       <a href='/detail'>
         <div className='w-full rounded-lg flex justify-center items-center'>
           <Image
