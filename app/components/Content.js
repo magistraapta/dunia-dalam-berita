@@ -13,7 +13,6 @@ async function getData(category){
 export default async function Content({category}) {
   const data = await getData(category)
   const news = data.data.posts
-  console.log(news)
     
   return (
     <div className='flex justify-center my-4 '>
@@ -25,7 +24,7 @@ export default async function Content({category}) {
             <div className=' flex flex-row gap-2 overflow-x-scroll w-full no-scrollbar  justify-between'>
                 {
                     news.map((item, index) => (
-                        <NewsCard key={index} title={item.title} desc={item.description} thumbnail={item.thumbnail}/>
+                        <NewsCard key={index} title={item.title} desc={item.description} thumbnail={item.thumbnail} link={item.link}/>
                     ))
                 }
             </div>
