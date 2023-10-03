@@ -1,37 +1,20 @@
 import React from 'react'
 import NewsCard from './NewsCard'
-import { list } from 'postcss'
-import { error } from 'console'
 
-const news = [
-    {
-        title: 'title here',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat.'
-    },
-    {
-        title: 'title here',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat.'
-    },
-    {
-        title: 'title here',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat.'
-    },
-    {
-        title: 'title here',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat.'
-    },
-    {
-        title: 'title here',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat.'
-    },
-    
-    
-    
-]
-
-
+async function getData(category){
+    try {
+      const res = await fetch(`https://api-berita-indonesia.vercel.app/antara/${category}/`)
+      return res.json()
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
 export default async function Content({category}) {
+  const data = await getData(category)
+  const news = data.data.posts
+  console.log(news)
+    
   return (
     <div className='flex justify-center my-4 '>
 
@@ -42,7 +25,7 @@ export default async function Content({category}) {
             <div className=' flex flex-row gap-2 overflow-x-scroll w-full no-scrollbar  justify-between'>
                 {
                     news.map((item, index) => (
-                        <NewsCard key={index} title={item.title} desc={item.desc}/>
+                        <NewsCard key={index} title={item.title} desc={item.description} thumbnail={item.thumbnail}/>
                     ))
                 }
             </div>
