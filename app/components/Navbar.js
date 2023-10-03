@@ -3,7 +3,7 @@ import React from 'react'
 export default function Navbar() {
   return (
     
-    <div className='flex justify-center shadow-md sticky top-0 bg-white'>
+    <header className='flex justify-center shadow-md sticky top-0 bg-white'>
         <div className='flex justify-between  w-11/12 p-6 items-center'>
         <div className=''>
             <h1 className=' font-bold text-xl'><a href="/">Dunia Dalam Berita</a></h1>
@@ -11,16 +11,16 @@ export default function Navbar() {
         <div className=' w-3/12'>
             <ul className=' flex justify-between  '>
                 <li>
-                    <a href="/detail">CNN</a>
+                    <a href="/category">CNN</a>
                 </li>
                 <li>
-                    <a href="/detail">Detik</a>
+                    <a href="/category">Detik</a>
                 </li>
                 <li>
-                    <a href="/detail">Antara</a>
+                    <a href="/category">Antara</a>
                 </li>
                 <li>
-                    <a href="/detail">Tribun</a>
+                    <a href="/category">Tribun</a>
                 </li>
                 
             </ul>
@@ -29,6 +29,6 @@ export default function Navbar() {
             <input type="text" placeholder='Search...' className='px-2 py-1 w-full border border-black rounded-md'/>
         </div>
     </div>
-    </div>
+    </header>
   )
 }
